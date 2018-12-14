@@ -1,0 +1,33 @@
+<div class="row">
+
+  <div class="col-md-12">
+    <h2><%= @user.fullname %>  <%= image_tag avatar_url(@user), class: "img-circle avatar-small" %></h2>
+    <% if current_user && current_user != @user %>
+      <%= link_to "Send Message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: :post, class: "btn btn-default" %>
+    <% end %>
+
+    <div class="description">
+      <br/>ユーザー紹介<br/>
+      <%= @user.description %><br/><br/>
+    </div>
+
+    <h4>貸し出せるバイク (<%= @motorbikes.length %>)</h4><br/>
+
+    <div class="row">
+      <%= render partial: "motorbikes/your_motorbike_list", locals: {motorbikes: @motorbikes} %>
+    </div>
+    <br/>
+
+    <h4>お客様からのレビュー (<%= @guest_reviews.count %>)</h4>
+    <div class="row">
+      <%= render "reviews/guest_list" %>
+    </div>
+    <br/>
+
+    <h4>オーナー様からのレビュー (<%= @host_reviews.count %>)</h4>
+    <div class="row">
+      <%= render "reviews/host_list" %>
+    </div>
+
+  </div>
+</div>

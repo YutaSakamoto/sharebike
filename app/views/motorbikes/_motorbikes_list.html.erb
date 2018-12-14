@@ -1,0 +1,15 @@
+<% @motorbikes.each do |motorbike| %>
+    <div class="col-md-2">
+
+        <div class="panel-heading preview">
+          <%= image_tag motorbike.cover_photo(:medium) %>
+        </div>
+
+        <div class="panel-body">
+          <%= link_to motorbike.listing_name, motorbike %><br/>
+          <%= motorbike.address %><br/>
+          ￥<%= motorbike.price %> / 1日
+        </div>
+      </div>
+
+<% end %>
