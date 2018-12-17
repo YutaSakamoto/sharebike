@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   get 'motorbikes/index'
   get 'motorbikes/new'
-  get 'motorbikes/create'
   get 'motorbikes/listing'
   get 'motorbikes/pricing'
   get 'motorbikes/photo_upload'
