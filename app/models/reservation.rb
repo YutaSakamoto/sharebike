@@ -1,5 +1,6 @@
 class Reservation < ApplicationRecord
   enum status: {Waiting: 0, Approved: 1, Declined: 2}
+<<<<<<< HEAD
 
   after_create_commit :create_notification
 
@@ -18,4 +19,9 @@ class Reservation < ApplicationRecord
 
       Notification.create(content: "#{guest.fullname}さんから予約がありました", user_id: self.motorbike.user_id)
     end
+=======
+  
+  belongs_to :user
+  belongs_to :motorbike
+>>>>>>> origin/master
 end

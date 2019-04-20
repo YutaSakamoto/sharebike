@@ -18,8 +18,11 @@
 //= require toastr
 //= require moment
 //= require fullcalendar
+<<<<<<< HEAD
 //= require card
 //= require Chart.bundle
 //= require chartkick
+=======
+>>>>>>> origin/master
 //= require cable
 //= require_tree .

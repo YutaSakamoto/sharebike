@@ -8,7 +8,11 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
+<<<<<<< HEAD
   # config.secret_key = '9d7da2915a7e3644eb0dcf6673d6910e91dbcd33dd64ae8b0bd7026a832d28ca0bdcfe813b3575829afaf1382ec5ed60f76c0cc1065ef245f49d317d4aa5f716'
+=======
+  # config.secret_key = 'e99955320f90e3f7e90e3956e9f0c6cd9ef63c88c8cdc9ea1a52471912f98ccfc0638fc0e46a8af96b62ea3946980c4da2c35b7497eef89b8921922d7753b807'
+>>>>>>> origin/master
 
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
@@ -114,7 +118,11 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
+<<<<<<< HEAD
   # config.pepper = 'f29766d8ecdefe93f3f3b841a1a53dee4ee718db15bac52f3e01dc951e90f56567517b1d2fa061963f13aff66c249f4cd2c241e1ccd2ca4b1878c512344d1b38'
+=======
+  # config.pepper = '168add014ccacc80f4f90a76ab30455e2a476fe01b31a948767e713c16848888e319bf720d7b3c7078eff63d5e274e5342ceef7a7b0e59ae4807dcf1329ab12a'
+>>>>>>> origin/master
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -287,6 +295,11 @@ Devise.setup do |config|
   # ActiveSupport.on_load(:devise_failure_app) do
   #   include Turbolinks::Controller
   # end
+<<<<<<< HEAD
   config.omniauth :facebook, '2236870279924056', '0415f4beefdce299fab3a36956967838', scope: 'email', info_fields: 'email, name'
   config.omniauth :stripe_connect, 'ca_DfVYJRzrdFyhofr8HfAt0rl9ZuSPGiWl', 'sk_test_l2qFQB2Az2zmC0lyWMtXa1Y4', scope: 'read_write', stripe_landing: 'login'
+=======
+  config.omniauth :facebook, '743064526058556', 'ec62d6903b209d04a06b2b7385f0e08c', scope: 'email', info_fields: 'email, name'
+  #config.omniauth :stripe_connect, 'ca_DfVYJRzrdFyhofr8HfAt0rl9ZuSPGiWl', 'sk_test_l2qFQB2Az2zmC0lyWMtXa1Y4', scope: 'read_write', stripe_landing: 'login'
+>>>>>>> origin/master
 end

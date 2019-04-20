@@ -3,10 +3,13 @@
     <h3><%= current_user.fullname %>   <%= image_tag avatar_url(current_user), class: "img-circle avatar-small" %></h3><hr/>
       <span>ユーザー紹介：<br/><br/>
         <%= simple_format current_user.description %></span>
+<<<<<<< HEAD
       <hr/><h4>未読メッセージ</h4>
         <%= link_to notifications_path do %>
         <h4 id="num_of_unread"><br/><%= current_user.unread %></h4>
         <% end %>
+=======
+>>>>>>> origin/master
   </div>
 
   <div class="col-md-9">

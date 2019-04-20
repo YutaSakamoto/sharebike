@@ -24,10 +24,17 @@ class GuestReviewsController < ApplicationController
           flash[:success] = "レビューが保存されました"
       else
           # Already reviewed
+<<<<<<< HEAD
           flash[:success] = "すでにレビューが保存されています"
       end
     else
       flash[:alert] = "予約の確認ができませんでした"
+=======
+          flash[:success] = "すでにレビューがされています"
+      end
+    else
+      flash[:alert] = "予約が見つかりませんでした"
+>>>>>>> origin/master
     end
 
     redirect_back(fallback_location: request.referer)
@@ -37,7 +44,11 @@ class GuestReviewsController < ApplicationController
     @guest_review = Review.find(params[:id])
     @guest_review.destroy
 
+<<<<<<< HEAD
     redirect_back(fallback_location: request.referer, notice: "削除しました...!")
+=======
+    redirect_back(fallback_location: request.referer, notice: "削除しました")
+>>>>>>> origin/master
   end
 
   private

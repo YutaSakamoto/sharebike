@@ -1,5 +1,9 @@
 <!-- Static navbar -->
+<<<<<<< HEAD
 <nav class="navbar navbar-default navbar-static-top" style ="margin-bottom: 0px">
+=======
+<nav class="navbar navbar-default navbar-static-top" style ="margin-bottom: 10px">
+>>>>>>> origin/master
   <div class="container">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -18,22 +22,28 @@
       <% end %>
 
       <ul class="nav navbar-nav navbar-right">
+<<<<<<< HEAD
         <li>
           <button class="btn btn-form btn-small">
             <%= link_to "バイクを貸す", new_motorbike_path, style: "color: white; text-decoration: none;" %>
           </button>
         </li>
 
+=======
+>>>>>>> origin/master
         <% if (!user_signed_in?) %>
             <li><%= link_to "Login", new_user_session_path %></li>
             <li><%= link_to "Sign Up", new_user_registration_path %></li>
         <% else %>
+<<<<<<< HEAD
             <li>
               <%= link_to notifications_path do %>
                 <i class="fa fa-bell fa-2x icon-babu"></i>
                 <span class="badge" id="navbar_num_of_unread"><%= current_user.unread if current_user.unread > 0 %></span>
               <% end %>
             </li>
+=======
+>>>>>>> origin/master
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown"
                     role="button" aria-haspopup="true" aria-expanded="false">
@@ -44,14 +54,21 @@
                 <li><%= link_to "ダッシュボード", dashboard_path %></li>
                 <li><%= link_to "メッセージ", conversations_path %></li>
                 <li><%= link_to "貸し出し管理", motorbikes_path %></li>
+<<<<<<< HEAD
                 <li><%= link_to "カレンダー", host_calendar_path %></li>
+=======
+>>>>>>> origin/master
                 <li><%= link_to "バイクを貸す", new_motorbike_path %></li>
                 <li><%= link_to "予約の確認", your_reservations_path %></li>
                 <li><%= link_to "借りる日", your_trips_path %></li>
 
                 <li role="separator" class="divider"></li>
                 <li><%= link_to "ユーザー設定", edit_user_registration_path %></li>
+<<<<<<< HEAD
                 <li><%= link_to "支払い設定", payment_method_path %></li>
+=======
+                <li><%= link_to "支払い設定", "#" %></li>
+>>>>>>> origin/master
                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
               </ul>
             </li>

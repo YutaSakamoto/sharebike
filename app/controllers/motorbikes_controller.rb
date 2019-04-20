@@ -1,7 +1,10 @@
 class MotorbikesController < ApplicationController
   before_action :set_motorbike, except: [:index, :new, :create]
   before_action :authenticate_user!, except: [:show]
+<<<<<<< HEAD
   before_action :is_authorised, only: [:listing, :pricing, :description, :photo_upload, :amenities, :location, :update]
+=======
+>>>>>>> origin/master
 
   def index
     @motorbikes = current_user.motorbikes
@@ -12,6 +15,7 @@ class MotorbikesController < ApplicationController
   end
 
   def create
+<<<<<<< HEAD
     if !current_user.is_active_host
       return redirect_to payout_method_path, alert: "支払い設定を完了してください"
     end
@@ -21,6 +25,15 @@ class MotorbikesController < ApplicationController
       redirect_to listing_motorbike_path(@motorbike), notice: "保存されました"
     else
       flash[:alert] = "保存に失敗しました"
+=======
+
+
+    @motorbike = current_user.motorbikes.build(motorbike_params)
+    if @motorbike.save
+      redirect_to listing_motorbike_path(@motorbike), notice: "保存しました"
+    else
+      flash[:alert] = "エラーが発生しました"
+>>>>>>> origin/master
       render :new
     end
   end
@@ -43,6 +56,12 @@ class MotorbikesController < ApplicationController
     @photos = @motorbike.photos
   end
 
+<<<<<<< HEAD
+=======
+  def amenities
+  end
+
+>>>>>>> origin/master
   def location
   end
 
@@ -54,11 +73,16 @@ class MotorbikesController < ApplicationController
     if @motorbike.update(new_params)
       flash[:notice] = "保存されました"
     else
+<<<<<<< HEAD
       flash[:alert] = "保存に失敗しました"
+=======
+      flash[:alert] = "エラーが発生しました"
+>>>>>>> origin/master
     end
     redirect_back(fallback_location: request.referer)
   end
 
+<<<<<<< HEAD
   # --- Reservations ---
   def preload
     today = Date.today
@@ -92,15 +116,21 @@ class MotorbikesController < ApplicationController
 
       check.size > 0 || check_2.size > 0 ? true : false
     end
+=======
+  private
+>>>>>>> origin/master
 
     def set_motorbike
       @motorbike = Motorbike.find(params[:id])
     end
 
+<<<<<<< HEAD
     def is_authorised
       redirect_to root_path, alert: "権限がありません" unless current_user.id == @motorbike.user_id
     end
 
+=======
+>>>>>>> origin/master
     def is_ready_motorbike
       !@motorbike.active && !@motorbike.price.blank? && !@motorbike.listing_name.blank? && !@motorbike.photos.blank? && !@motorbike.address.blank?
     end

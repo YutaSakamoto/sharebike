@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   get 'motorbikes/index'
   get 'motorbikes/new'
+<<<<<<< HEAD
   get 'motorbikes/create'
+=======
+>>>>>>> origin/master
   get 'motorbikes/listing'
   get 'motorbikes/pricing'
   get 'motorbikes/photo_upload'
@@ -57,12 +60,16 @@ Rails.application.routes.draw do
     end
   end
 
+<<<<<<< HEAD
   resources :revenues, only: [:index]
 
+=======
+>>>>>>> origin/master
   resources :conversations, only: [:index, :create]  do
   resources :messages, only: [:index, :create]
 end
 
+<<<<<<< HEAD
   get '/host_calendar' => "calendars#host"
   get '/payment_method' => "users#payment"
   get '/payout_method' => "users#payout"
@@ -70,5 +77,7 @@ end
 
   get '/notifications' => 'notifications#index'
 
+=======
+>>>>>>> origin/master
   mount ActionCable.server => '/cable'
 end

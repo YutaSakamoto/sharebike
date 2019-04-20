@@ -15,11 +15,14 @@ class ReservationsController < ApplicationController
       end_date = Date.parse(reservation_params[:end_date])
       days = (end_date - start_date).to_i + 1
 
+<<<<<<< HEAD
       special_dates = motorbike.calendars.where(
         "status = ? AND day BETWEEN ? AND ? AND price <> ?",
         0, start_date, end_date, motorbike.price
       )
 
+=======
+>>>>>>> origin/master
       @reservation = current_user.reservations.build(reservation_params)
       @reservation.motorbike = motorbike
       @reservation.price = motorbike.price
@@ -74,8 +77,13 @@ class ReservationsController < ApplicationController
         :description => motorbike.listing_name,
         :currency => "jpy",
         :destination => {
+<<<<<<< HEAD
         :amount => reservation.total * 80, # 80% of the total amount goes to the Host
         :account => motorbike.user.merchant_id # Host's Stripe customer ID
+=======
+        :amount => reservation.total * 80,
+        :account => motorbike.user.merchant_id
+>>>>>>> origin/master
       }
 
       )

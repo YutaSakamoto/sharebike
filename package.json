@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "bike4",
+=======
+  "name": "bike6",
+>>>>>>> origin/master
   "private": true,
   "dependencies": {}
 }

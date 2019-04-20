@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2018_11_14_092023) do
+=======
+ActiveRecord::Schema.define(version: 2018_11_13_075928) do
+>>>>>>> origin/master
 
   create_table "calendars", force: :cascade do |t|
     t.date "day"
@@ -50,6 +54,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_092023) do
     t.datetime "updated_at", null: false
     t.float "latitude"
     t.float "longitude"
+<<<<<<< HEAD
     t.integer "instant", default: 1
     t.index ["user_id"], name: "index_motorbikes_on_user_id"
   end
@@ -62,6 +67,12 @@ ActiveRecord::Schema.define(version: 2018_11_14_092023) do
     t.index ["user_id"], name: "index_notifications_on_user_id"
   end
 
+=======
+    t.integer "instant", default: 0
+    t.index ["user_id"], name: "index_motorbikes_on_user_id"
+  end
+
+>>>>>>> origin/master
   create_table "photos", force: :cascade do |t|
     t.integer "motorbike_id"
     t.datetime "created_at", null: false
@@ -82,7 +93,11 @@ ActiveRecord::Schema.define(version: 2018_11_14_092023) do
     t.integer "total"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+<<<<<<< HEAD
     t.integer "status", default: 1
+=======
+    t.integer "status", default: 0
+>>>>>>> origin/master
     t.index ["motorbike_id"], name: "index_reservations_on_motorbike_id"
     t.index ["user_id"], name: "index_reservations_on_user_id"
   end
@@ -112,6 +127,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_092023) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fullname"
+<<<<<<< HEAD
     t.string "provider"
     t.string "uid"
     t.string "image"
@@ -120,6 +136,13 @@ ActiveRecord::Schema.define(version: 2018_11_14_092023) do
     t.integer "unread", default: 0
     t.string "stripe_id"
     t.string "merchant_id"
+=======
+    t.string "phone_number"
+    t.text "description"
+    t.string "provider"
+    t.string "uid"
+    t.string "image"
+>>>>>>> origin/master
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

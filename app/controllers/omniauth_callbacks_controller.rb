@@ -12,6 +12,7 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+<<<<<<< HEAD
   def stripe_connect
     auth_data = request.env["omniauth.auth"]
     @user = current_user
@@ -42,6 +43,8 @@ class OmniauthCallbacksController < Devise::OmniauthCallbacksController
     end
   end
 
+=======
+>>>>>>> origin/master
   def failure
     redirect_to root_path
   end

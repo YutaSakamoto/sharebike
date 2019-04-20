@@ -38,6 +38,7 @@ gem 'jquery-rails'
 gem 'toastr-rails', '~> 1.0'
 gem 'kaminari', '~> 0.17.0'
 gem 'kaminari-bootstrap', '~> 3.0.1'
+<<<<<<< HEAD
 
 gem 'omniauth', '~> 1.6'
 gem 'omniauth-twitter'
@@ -59,3 +60,13 @@ gem 'rails-assets-card', source: 'https://rails-assets.org'
 gem 'omniauth-stripe-connect', '~> 2.10.0'
 
 gem 'chartkick', '~> 2.2.4'
+=======
+gem 'omniauth', '~> 1.6'
+gem 'omniauth-facebook'
+gem 'paperclip'
+gem 'geocoder', '~> 1.4'
+gem 'jquery-ui-rails', '~> 5.0'
+gem 'ransack'
+gem 'fullcalendar-rails', '~> 3.4.0'
+gem 'momentjs-rails', '~> 2.17.1'
+>>>>>>> origin/master

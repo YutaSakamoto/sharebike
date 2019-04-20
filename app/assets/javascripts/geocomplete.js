@@ -49,7 +49,11 @@
     location: false,
 
     mapOptions: {
+<<<<<<< HEAD
       zoom: 16,
+=======
+      zoom: 14,
+>>>>>>> origin/master
       scrollwheel: false,
       mapTypeId: "roadmap"
     },

@@ -1,10 +1,14 @@
 class PagesController < ApplicationController
   PER = 6
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
   def home
     @motorbikes = Motorbike.where(active: true).limit(30).page(params[:page]).per(PER)
   end
 
+<<<<<<< HEAD
   def about
   end
 
@@ -14,6 +18,8 @@ class PagesController < ApplicationController
   def renters
   end
 
+=======
+>>>>>>> origin/master
   def search
     # STEP 1
     if params[:search].present? && params[:search].strip != ""
@@ -34,6 +40,7 @@ class PagesController < ApplicationController
     @arrMotorbikes = @motorbikes.to_a
 
     # STEP 4
+<<<<<<< HEAD
     if (params[:start_date] && params[:end_date] && !params[:start_date].empty? &&  !params[:end_date].empty?)
 
         start_date = Date.parse(params[:start_date])
@@ -62,5 +69,7 @@ class PagesController < ApplicationController
         end
       end
     end
+=======
+>>>>>>> origin/master
   end
 end

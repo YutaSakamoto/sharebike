@@ -9,7 +9,11 @@ class PhotosController < ApplicationController
       end
 
       @photos = @motorbike.photos
+<<<<<<< HEAD
       redirect_back(fallback_location: request.referer, notice: "保存されました")
+=======
+      redirect_back(fallback_location: request.referer, notice: "保存しました")
+>>>>>>> origin/master
     end
   end
 

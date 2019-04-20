@@ -10,6 +10,10 @@ class UsersController < ApplicationController
 
     # Display all the host reviews to host (if this user is a guest)
     @host_reviews = Review.where(type: "HostReview", guest_id: @user.id)
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
   end
 
   def update_phone_number
@@ -20,6 +24,7 @@ class UsersController < ApplicationController
     redirect_to edit_user_registration_path, alert: "#{e.message}"
   end
 
+<<<<<<< HEAD
   def payment
   end
 
@@ -56,5 +61,11 @@ class UsersController < ApplicationController
 
     def user_params
       params.require(:user).permit(:phone_number, :pin)
+=======
+  private
+
+    def user_params
+      params.require(:user).permit(:phone_number)
+>>>>>>> origin/master
     end
 end

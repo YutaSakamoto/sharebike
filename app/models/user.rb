@@ -5,7 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable
 
    validates :fullname, presence: true, length: {maximum: 50}
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
    has_many :motorbikes
    has_many :reservations
 
@@ -14,6 +17,7 @@ class User < ApplicationRecord
 
    has_many :notifications
 
+<<<<<<< HEAD
    def self.from_omniauth(auth)
       user = User.where(email: auth.info.email).first
 
@@ -39,4 +43,26 @@ class User < ApplicationRecord
       !self.merchant_id.blank?
     end
 
+=======
+  def self.from_omniauth(auth)
+  user = User.where(email: auth.info.email).first
+
+  if user
+    return user
+  else
+    where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
+      user.email = auth.info.email
+      user.password = Devise.friendly_token[0,20]
+      user.fullname = auth.info.name
+      user.image = auth.info.image
+      user.uid = auth.uid
+      user.provider = auth.provider
+
+      # If you are using confirmable and the provider(s) you use validate emails,
+      # uncomment the line below to skip the confirmation emails.
+      user.skip_confirmation!
+    end
+  end
+end
+>>>>>>> origin/master
 end

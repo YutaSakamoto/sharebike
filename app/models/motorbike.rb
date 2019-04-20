@@ -16,7 +16,10 @@ class Motorbike < ApplicationRecord
   validates :summary, presence: true
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
   def cover_photo(size)
     if self.photos.length > 0
       self.photos[0].image.url(size)
