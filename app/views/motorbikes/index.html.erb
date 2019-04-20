@@ -1,0 +1,21 @@
+<br/>
+<h3>シェアするバイクの管理</h3><hr/>
+<div class="row">
+        <% @motorbikes.each do |motorbike| %>
+          <div class="row">
+            <div class="col-md-2">
+              <%= image_tag motorbike.cover_photo(:thumb) %>
+            </div>
+            <div class="col-md-5">
+              <h4><%= motorbike.listing_name %></h4>
+            </div>
+            <div class="col-md-2">
+              <h4>￥<%= motorbike.price %></h4>
+            </div>
+            <div class="col-md-3 right">
+              <%= link_to "アップデート", listing_motorbike_path(motorbike), class: "btn btn-form" %>
+            </div>
+          </div>
+          <hr/>
+        <% end %>
+      </div>

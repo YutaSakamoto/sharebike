@@ -1,0 +1,33 @@
+<ul class="sidebar-list">
+  <li class="sidebar-item">
+    <%= link_to "バイクを貸す", listing_motorbike_path, class: "sidebar-link active" %>
+    <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "価格", pricing_motorbike_path, class: "sidebar-link active" %>
+    <% if !@motorbike.price.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "写真", photo_upload_motorbike_path, class: "sidebar-link active" %>
+    <% if !@motorbike.photos.blank? %>
+      <span id="photo_check" class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+  <li class="sidebar-item">
+    <%= link_to "住所", location_motorbike_path, class: "sidebar-link active" %>
+    <% if !@motorbike.address.blank? %>
+      <span class="pull-right text-babu"><i class="fa fa-check"></i></span>
+    <% end %>
+  </li>
+</ul>
+<hr/>
+
+<% is_ready = !@motorbike.active && !@motorbike.price.blank? && !@motorbike.listing_name.blank? && !@motorbike.photos.blank? && !@motorbike.address.blank? %>
+
+<%= form_for @motorbike do |f| %>
+  <%= f.hidden_field :active, value: true %>
+  上記の情報を入力すると <br/>公開することができます。<br/></br>
+  <%= f.submit "公開する", id: "publish_button", class: "btn btn-normal btn-block", disabled: !is_ready %>
+<% end %>
